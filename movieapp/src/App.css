@@ -1,0 +1,130 @@
+.App {
+  text-align: center;
+}
+
+body {
+  font-size: 1em;
+}
+
+.App-header {
+  background-color: #fff;
+  min-height: 100vh;
+  display: block;
+}
+
+.movieListHeader h1 {
+  font-size: 3em;
+  margin: 1em 0 0 0;
+}
+
+.movie,
+.movieDescription {
+  color: #000;
+  font-size: 1.1em;
+  text-align: left;
+}
+
+.movie {
+  padding: .5em 0;
+  border-bottom: 1px solid #000;
+}
+
+.movie h2 {
+  text-align: left;
+  font-size: 1.6em;
+  margin: .5em 0;
+}
+
+.movieListHeader {
+  background-color: #fff;
+}
+
+.movieListHeader {
+  margin: 0;
+  padding: 0;
+}
+
+.movieList,
+.movie {
+  width: 100%;
+}
+
+.movieList {
+  width: 1000px;
+  display: block;
+  margin: 0 auto;
+}
+
+h4 {
+  color: green !important;
+}
+
+.pagination {
+  display: block;
+  margin: 1em 0;
+}
+
+.pagination #oneLetter {
+  margin: 0 .5em;
+  font-size: 1.3em;
+}
+
+.pagination #oneLetter:hover {
+  cursor: pointer;
+}
+
+.pagination .letterActive {
+  color: green;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.movie .movieImg {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.movie .movieImg img {
+  max-width: 100%;
+}
+
+.movie .movieHeader {
+  width: 100%;
+  display: block;
+}
+
+.movieDescription .movieDescriptionTitle {
+  font-weight: bold;
+  -webkit-box-flex: 1;
+}
+
+.movieInfosWrapper {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.movieInfosWrapper .movieDescription.wImg {
+  box-sizing: border-box;
+  flex: 0 0 75%;
+  padding: 0 0 0 1em;
+}
+.movieInfosWrapper .movieDescription.noImg {
+  flex: 0 0 100%;
+}
+.movieInfosWrapper .movieImg {
+  flex: 0 0 25%;
+}
+
+@media only screen and (max-width: 1000px) {
+  .movieList {
+    width: 100%;
+  }
+
+  .movieList .movie {
+    padding: 0 1em;
+    box-sizing: border-box;
+  }
+}
