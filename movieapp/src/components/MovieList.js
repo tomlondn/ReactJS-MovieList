@@ -36,7 +36,7 @@ const MovieList = () => {
   const lettersToObject = (lettersArr) => {
     let newLetters = [];
 
-    lettersArr.map((item, index) => {
+    lettersArr.forEach((item, index) => {
       if (index === 0) {
         newLetters[index] = { letter: item, active: true }
       } else {
@@ -68,7 +68,7 @@ const MovieList = () => {
 
   useEffect(() => {
     callData();
-  }, [])
+  }, [callData])
 
   return (
     <div className='movieListWrapper'>

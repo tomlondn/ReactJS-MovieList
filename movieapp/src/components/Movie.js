@@ -2,7 +2,8 @@ import React from 'react'
 
 const Movie = ({ movietitle, description, movieimg, releaseDate }) => {
     var img = "https://www.themoviedb.org/t/p/w500" + movieimg;
-    var releaseDate = new Date(releaseDate);
+    releaseDate = new Date(releaseDate);
+    
     return (
         <section className='movie'>
             <header className='movieHeader'>
