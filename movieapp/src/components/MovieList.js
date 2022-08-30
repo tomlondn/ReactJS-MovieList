@@ -21,17 +21,6 @@ const MovieList = () => {
     setLetters(newLetters);
   }
 
-  const getFirstLetters = (response) => {
-    let letters = [];
-
-    response.data['items'].forEach((item) => {
-      if (item['original_title'] && item['original_title'].charAt(0).match(/[aA-zZ]/i) && !letters.includes(item['original_title'].charAt(0))) {
-
-        letters.push(item['original_title'].charAt(0));
-      }
-    })
-    setLetters(lettersToObject(letters.sort()));
-  }
 
   const lettersToObject = (lettersArr) => {
     let newLetters = [];
@@ -56,17 +45,28 @@ const MovieList = () => {
     })
     return activeLetter;
   }
+  useEffect(() => {
 
-  const callData = async () => {
-    const res = await axios.get(apiurl);
+    const getFirstLetters = (response) => {
+      let letters = [];
+
+      response.data['items'].forEach((item) => {
+        if (item['original_title'] && item['original_title'].charAt(0).match(/[aA-zZ]/i) && !letters.includes(item['original_title'].charAt(0))) {
+
+          letters.push(item['original_title'].charAt(0));
+        }
+      })
+      setLetters(lettersToObject(letters.sort()));
+    }
+
+    const callData = async () => {
+      const res = await axios.get(apiurl);
 
       getFirstLetters(res)
       setData(res.data['items'])
       setLoading(false)
 
-  }
-
-  useEffect(() => {
+    }
     callData();
   }, [])
 
@@ -103,6 +103,8 @@ const MovieList = () => {
                   description={item.overview}
                 ></Movie>
               )
+            } else {
+              return ('');
             }
           }))}
 
