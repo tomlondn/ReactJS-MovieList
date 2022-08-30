@@ -68,7 +68,7 @@ const MovieList = () => {
 
   useEffect(() => {
     callData();
-  }, [callData])
+  }, [])
 
   return (
     <div className='movieListWrapper'>
